@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Career-Roller</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/output.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+<script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
+<body>
+
+<div>
+    <div>
+        <button type="button" id="randomBt" >
+            <div>Click!</div>
+        </button>
+    </div>
+
+    <div id="careerDiv" >
+        <h1 id="careerTitle">Titel</h1>
+
+        <div>
+            Course-Id:
+            <span id="careerCourseId"></span>
+        </div>
+
+        <div>
+            Location:
+            <span id="careerLocation"></span>
+        </div>
+
+        <div>
+            <p>Description:</p>
+            <p id="careerDescription"></p>
+        </div>
+    </div>
+</div>
+
+<div id="loadingOverlay">
+
+</div>
+
+<script>
+
+    const randomBt = document.querySelector('#randomBt')
+    const careerDiv = document.querySelector('#careerDiv')
+    randomBt.addEventListener('click', getRandomCareer)
+
+
+    function getRandomCareer() {
+        fetch('OpenJsonData.json')
+            .then(response => response.json())
+            .then(data => data[Math.floor(Math.random() * data.length)])
+            .then(career => {
+                careerDiv.querySelector('#careerTitle').innerHTML = career['Titel']
+                careerDiv.querySelector('#careerCourseId').innerHTML = career['CourseId']
+                careerDiv.querySelector('#careerLocation').innerHTML = career['Province']
+                careerDiv.querySelector('#careerDescription').innerHTML = career['Description']
+            })
+    }
+
+</script>
+
+<script type="text/javascript">(function(){window['__CF$cv$params']={r:'6d5dadf188007873',m:'_CKy0ET6BDnfKD8ltdXyIaVWRf_7pkJby4qKaV818Pk-1643576947-0-Ad/szB3ZfdLHWMPDieVFwA7gboQmiM9f3Yw7Yc7pZoDH/2jL4MSwHbKbqR4YR3b500hzTENvLeHo3YiiVzFe04j8FezsCZyLC9xKawQaJKiSsZ5bfxnpe7wpRd6cts5QQo2k93FN5vXL8KckPZ+QVvLxAIvSvCM7lPGvFtebF6dPMThypUpaOCcdAwyU/73Z1Q==',s:[0x6efed7905d,0xf08580c283],}})();</script></body>
+</html>
