@@ -1,37 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="m-5">
 <head>
     <meta charset="UTF-8">
     <title>Career-Roller</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/dist/output.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
-<script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
 <body>
 
 <div>
-    <div>
-        <button type="button" id="randomBt" >
-            <div>Click!</div>
+    <div class="w-50 p-3 mx-auto mb-5">
+        <button type="button" id="randomBt" class="btn btn-large btn-primary btn-block">
+            <div>Get Random Job!</div>
         </button>
     </div>
 
     <div id="careerDiv" >
-        <h1 id="careerTitle">Titel</h1>
 
-        <div>
-            Course-Id:
-            <span id="careerCourseId"></span>
+        <h1 id="careerTitle" class="mx-auto text-center mb-5">Titel</h1>
+
+        <div id="displayID">
+            <div class="font-weight-bold mb-2">Course-Id:</div>
+            <div id="careerCourseId" class="mb-4"></div>
         </div>
 
-        <div>
-            Location:
-            <span id="careerLocation"></span>
+        <div id="displayProvince">
+            <div class="font-weight-bold mb-2">Province:</div>
+            <div id="careerLocation" class="mb-4"></div>
         </div>
 
-        <div>
-            <p>Description:</p>
-            <p id="careerDescription"></p>
+        <div id="displayCity">
+            <div class="font-weight-bold mb-2">City:</div>
+            <div id="careerLocationCity" class="mb-4"></div>
+        </div>
+
+        <div id="displayURL">
+            <div class="font-weight-bold mb-2">URL:</div>
+            <div id="url" class="mb-4"></div>
+        </div>
+        <hr style="border-width: 3px; border-color: #007bff; margin-left: -100px; width: 200%">
+        <div id="displayDesc">
+            <div class="font-weight-bold mb-2">Description:</div>
+            <div id="careerDescription" class="mb-4 ml-5"></div>
         </div>
     </div>
 </div>
@@ -55,11 +65,14 @@
                 careerDiv.querySelector('#careerTitle').innerHTML = career['Titel']
                 careerDiv.querySelector('#careerCourseId').innerHTML = career['CourseId']
                 careerDiv.querySelector('#careerLocation').innerHTML = career['Province']
+                careerDiv.querySelector('#careerLocationCity').innerHTML = career['Place']
                 careerDiv.querySelector('#careerDescription').innerHTML = career['Description']
+                careerDiv.querySelector('#url').innerHTML = "<a href='" + career['Url'] + "'>" + career['Url'] + "</a>"
+
             })
     }
 
 </script>
 
-<script type="text/javascript">(function(){window['__CF$cv$params']={r:'6d5dadf188007873',m:'_CKy0ET6BDnfKD8ltdXyIaVWRf_7pkJby4qKaV818Pk-1643576947-0-Ad/szB3ZfdLHWMPDieVFwA7gboQmiM9f3Yw7Yc7pZoDH/2jL4MSwHbKbqR4YR3b500hzTENvLeHo3YiiVzFe04j8FezsCZyLC9xKawQaJKiSsZ5bfxnpe7wpRd6cts5QQo2k93FN5vXL8KckPZ+QVvLxAIvSvCM7lPGvFtebF6dPMThypUpaOCcdAwyU/73Z1Q==',s:[0x6efed7905d,0xf08580c283],}})();</script></body>
+</body>
 </html>
