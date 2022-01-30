@@ -1,2 +1,18 @@
-# CareerRoller
-The WIFI Vienna wants to help people who are unsatisfied with their job to choose a random new career path. They require an application which lets you define certain parameters and then presents users of the WebApp with a random job and details on training for it.sdf
+# WEBT_M4_Career-Roller
+HTLW3R - WebTech - Module 4 - Career roller (AJAX Clients)
+
+The point of this module is that when you are looking for a job, 
+the website provides the website provides you with a job oppurtunitiy from Wifi.
+
+AJAX is an approach that can be used to implement this aysnchronous data transfer betweeen server and client.
+The innovaitve web technology enables a request to be sent to the server at any time through the use of JavaScript.
+
+## Tailwind - CSS Framework
+```
+npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+```
+
+## SASS Compile
+```
+npx sass ./src/style.sass ./src/style.css
+```
